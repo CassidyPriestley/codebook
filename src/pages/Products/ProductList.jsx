@@ -24,7 +24,7 @@ export const ProductList = () => {
       }
     }
     fetchProducts();
-  }, [searchTerm]); //esLint-disable-Line
+  }, [searchTerm]); //eslint-disable-line
 
   return (
     <main>

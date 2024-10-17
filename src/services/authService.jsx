@@ -12,7 +12,7 @@ export async function login(authDetail) {
     throw {
       message: res.statusText,
       statusCode: res.status,
-    };
+    }; //esLint-disable-Line
   }
   const data = await res.json();
 
@@ -37,7 +37,7 @@ export async function register(authDetail) {
     throw {
       message: res.statusText,
       statusCode: res.status,
-    };
+    }; //eslint-disable-line
   }
   const data = await res.json();
 

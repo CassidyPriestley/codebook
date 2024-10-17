@@ -21,7 +21,7 @@ export async function getUser() {
     throw {
       message: res.statusText,
       statusCode: res.status,
-    };
+    }; //eslint-disable-line
   }
   const data = await res.json();
   return data;
@@ -44,7 +44,7 @@ export async function getUserOrders() {
     throw {
       message: res.statusText,
       statusCode: res.status,
-    };
+    }; //eslint-disable-line
   }
   const data = await res.json();
   return data;
@@ -78,7 +78,7 @@ export async function createOrder(cartList, total, user) {
     throw {
       message: res.statusText,
       statusCode: res.status,
-    };
+    }; //eslint-disable-line
   }
   const data = await res.json();
   return data;

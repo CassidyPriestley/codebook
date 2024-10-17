@@ -5,9 +5,7 @@ import { useEffect, useState } from "react";
 
 export const ProductCard = ({ product }) => {
   const { cartList, addToCart, removeFromCart } = useCart();
-  const { id, name, overview, price, rating, image_local, best_seller } =
-    product;
-  // Create a state to check if a product is in the cart
+  const { id, name, overview, price, rating, poster, best_seller } = product;
   const [inCart, setIncart] = useState(false);
 
   // useEffect
@@ -19,8 +17,6 @@ export const ProductCard = ({ product }) => {
     } else {
       setIncart(false);
     }
-    // depends on the cartList changing and we are using it in cartList.find
-    // and since we are using product.id that needs to be a dependency as well
   }, [cartList, product.id]);
 
   return (
@@ -31,11 +27,7 @@ export const ProductCard = ({ product }) => {
             Best Seller
           </span>
         )}
-        <img
-          className="rounded-t-lg w-full h-64"
-          src={image_local}
-          alt={name}
-        />
+        <img className="rounded-t-lg w-full h-64" src={poster} alt={name} />
       </Link>
       <div className="p-5">
         <Link to={`/products/${id}`}>
