@@ -5,10 +5,11 @@ export async function getProductList(searchTerm) {
     }`
   );
   if (!res.ok) {
-    throw {
+    const errorMessage = {
       message: res.statusText,
       statusCode: res.status,
-    }; //eslint-disable-line
+    };
+    throw errorMessage;
   }
   const data = await res.json();
   return data;
@@ -16,10 +17,11 @@ export async function getProductList(searchTerm) {
 export async function getProduct(id) {
   const res = await fetch(`${process.env.REACT_APP_HOST}/444/products/${id}`);
   if (!res.ok) {
-    throw {
+    const errorMessage = {
       message: res.statusText,
       statusCode: res.status,
-    }; //eslint-disable-line
+    };
+    throw errorMessage;
   }
   const data = await res.json();
   return data;
@@ -29,7 +31,8 @@ export async function getFeaturedList() {
     `${process.env.REACT_APP_HOST}/444/featured_products`
   );
   if (!res.ok) {
-    throw { message: res.statusText, status: res.status }; //eslint-disable-line
+    const errorMessage = { message: res.statusText, status: res.status };
+    throw errorMessage;
   }
   const data = await res.json();
   return data;

@@ -18,10 +18,11 @@ export async function getUser() {
     requestOption
   );
   if (!res.ok) {
-    throw {
+    const errorMessage = {
       message: res.statusText,
       statusCode: res.status,
-    }; //eslint-disable-line
+    };
+    throw errorMessage;
   }
   const data = await res.json();
   return data;
@@ -41,10 +42,11 @@ export async function getUserOrders() {
     requestOptions
   );
   if (!res.ok) {
-    throw {
+    const errorMessage = {
       message: res.statusText,
       statusCode: res.status,
-    }; //eslint-disable-line
+    };
+    throw errorMessage;
   }
   const data = await res.json();
   return data;
@@ -75,10 +77,11 @@ export async function createOrder(cartList, total, user) {
     requestOptions
   );
   if (!res.ok) {
-    throw {
+    const erroMessage = {
       message: res.statusText,
       statusCode: res.status,
-    }; //eslint-disable-line
+    };
+    throw erroMessage;
   }
   const data = await res.json();
   return data;
