@@ -9,10 +9,11 @@ export async function login(authDetail) {
     requestOptions
   );
   if (!res.ok) {
-    throw {
+    const errorMessage = {
       message: res.statusText,
       statusCode: res.status,
-    }; //esLint-disable-Line
+    };
+    throw errorMessage;
   }
   const data = await res.json();
 
@@ -34,10 +35,11 @@ export async function register(authDetail) {
     requestOptions
   );
   if (!res.ok) {
-    throw {
+    const errorMessage = {
       message: res.statusText,
       statusCode: res.status,
-    }; //eslint-disable-line
+    };
+    throw errorMessage;
   }
   const data = await res.json();
 
