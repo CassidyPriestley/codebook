@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { Rating } from "../components";
 import { useParams } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
 import { useCart } from "../Context";
 import { getProduct } from "../services";
-import { toast } from "react-toastify";
 
 export const ProductDetail = () => {
   const { cartList, addToCart, removeFromCart } = useCart();
@@ -82,15 +82,6 @@ export const ProductDetail = () => {
             </p>
             <p className="my-3">
               {!inCart && (
-                // <button
-                //   onClick={() => addToCart(product)}
-                //   className={`inline-flex items-center py-2 px-5 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 ${
-                //     product.in_stock ? "" : "cursor-not-allowed"
-                //   }`}
-                //   disabled={product.in_stock ? "" : "disabled"}
-                // >
-                //   Add To Cart <i className="ml-1 bi bi-plus-lg"></i>
-                // </button>
                 <button
                   onClick={() => addToCart(product)}
                   className={`relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 ${
